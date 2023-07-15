@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepalinews.com</title>
+    <meta name="description"
+        content="Read Bangladesh latest news updates, political affairs news, business news, crime news, government briefings, Bangladesh law & rights at Businessinsiderbd.com">
+    <meta name="keywords" content="news nepal">
+    <meta http-equiv="refresh" content="10000000">
+    <meta name="author" content="nepaliNewsbydev.com">
+    <meta name="resource-type" content="document">
+    <meta name="contact" content="editor@devnarayantajpuriya">
+    <meta name="copyright" content="Copyright (c) 2021. All Rights &reg; Reserved by devnarayantajpuriya">
+    <meta name="p:domain_verify" content="c0b55870314e28b95906c5cd302b5d39" />
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="googlebot-news" content="index, follow">
+    <meta name="msnbot" content="index, follow">
+    <meta property="fb:app_id" content="">
+    <meta property="fb:pages" content="102310071621132">
+    <meta property="og:site_name" content="nepali news">
+    <meta property="og:title" content="nepali news">
+    <meta property="og:description" content="nepali news">
+    <meta property="og:locale" content="en_US">
+    <link type="image/x-icon" rel="shortcut icon" href="/static/img/favicon.ico">
+    <link type="image/x-icon" rel="icon" href="/static/img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <header class="GreenBG text-white headerSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 ms-auto">
+                    <div class="hero-logo">
+                        <a href="#"><img src="/static/img/logo.png" alt="" title="" class="img-fluid img100 img-size"></a>
+                    </div>
+                </div>
+                <div class="col-sm-3 me-auto">
+                    <div class="Date">
+                        <span><i class="fa fa-calendar" aria-hidden="true"></i></span> <span>{{current_datetime}}</span>
+                    </div>
+                    {% comment %} <div class="social">
+                        <a href="#"><span><i class="fa fa-facebook-square" aria-hidden="true"></i></span></a> <a
+                            href="#"><span><i class="fa fa-youtube-square" aria-hidden="true"></i></span></a> <a
+                            href="#"><span><i class="fa fa-twitter-square" aria-hidden="true"></i></span></a>
+            
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <div class="headerSticky">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container">
+                    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav mx-auto">
+                            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
+                            <a class="nav-link" href='#' >चर्चामा</a>
+                            <a class="nav-link" href="#Lokpriya" onclick="redirectToDiv(event)">लोकप्रिय</a>
+                            <a class="nav-link" href="#upatiyaka" onclick="redirectToDiv(event)">उपत्यका</a>
+                            <a class="nav-link" href="#Monoranjan" onclick="redirectToDiv(event)">मनोरञ्जन</a>
+                            <a class="nav-link" href="#khelkud" onclick="redirectToDiv(event)">खेलकुद</a>
+                            <a class="nav-link" href="#Bishwa" onclick="redirectToDiv(event)">विश्व</a>
+                            <a class="nav-link" href="#bichar" onclick="redirectToDiv(event)">विचार</a>
+                            <a class="nav-link" href="#bigyanprabidhi" onclick="redirectToDiv(event)">विज्ञान र प्रविधि</a>
+                        </div>
+                        {% comment %} <button class="btn me-auto" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">menu<span><i
+                                    class="fa fa-bars" aria-hidden="true"></i></span></button> {% endcomment %}
+
+                        {% comment %} <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                            aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul>
+                                    <li class="Border-bottom"><span class="CT-Icon"><i class="fa fa-caret-left"
+                                                aria-hidden="true"></i></span> <a href="#">সর্বশেষ</a></li>
+                                    <li class="Border-bottom"><span class="CT-Icon"><i class="fa fa-caret-left"
+                                                aria-hidden="true"></i></span> <a href="#">মতামত</a></li>
+                                    <li class="Border-bottom"><span class="CT-Icon"><i class="fa fa-caret-left"
+                                                aria-hidden="true"></i></span> <a href="#">মুখোমুখি</a></li>
+                                    <li class="Border-bottom"><span class="CT-Icon"><i class="fa fa-caret-left"
+                                                aria-hidden="true"></i></span> <a href="#">জব কর্নার </a></li>
+                                    <li class="Border-bottom"><span class="CT-Icon"><i class="fa fa-caret-left"
+                                                aria-hidden="true"></i></span> <a href="#">ধর্ম</a></li>
+                                    <li class="Border-bottom"><span class="CT-Icon"><i class="fa fa-caret-left"
+                                                aria-hidden="true"></i></span> <a href="#">শিল্প ও সাহিত্য</a></li>
+                                    <li class="Border-bottom"><span class="CT-Icon"><i class="fa fa-caret-left"
+                                                aria-hidden="true"></i></span> <a href="#">স্বাস্থ্য</a></li>
+                                    <li class="Border-bottom"><span class="CT-Icon"><i class="fa fa-caret-left"
+                                                aria-hidden="true"></i></span> <a href="#">আইন ও আদালত</a></li>
+
+                                </ul>
+                            </div>
+                        </div> {% endcomment %}
+                        <!-- <ul class="navbar-nav me-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    অন্যান্য <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">ধর্ম</a></li>
+                                    <li><a class="dropdown-item" href="#">শিল্প ও সাহিত্য</a></li>
+                                    <li><a class="dropdown-item" href="#">আর্কাইভ</a></li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- top Section -->
+        <section class="newLeadNewsSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2
+                     Border-right">
+                        <div class="leadNewsB Mb-24">
+                             <a href="{{politicalnews.0.link}}">  {% comment %} this is link {% endcomment %}
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{politicalnews.0.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border-bottom">
+                                    <h3 class="title">{{politicalnews.0.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="leadNewsB">
+                            <a href="{{politicalnews.1.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{politicalnews.1.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border-bottom">
+                                    <h3 class="title">{{politicalnews.1.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% comment %} # this is leadNewsA {% endcomment %}
+                    <div class="col-sm-5">
+                        <div class="leadNewsA">
+                            <a href="{{politicalnews.2.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{politicalnews.2.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{politicalnews.2.title}}</h3>
+                                    <p class="brief">{{politicalnews.2.description}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="categoryTitleA">
+                            <a href="#">
+                                <h4>top-headlines<span class="CT-Icon"><i class="fa fa-caret-right"
+                                            aria-hidden="true"></i></span></h4>
+                            </a>
+                        </div>
+                        <div class="recentTop Border">
+                            <a href="{{topHeadlines.0.link}}">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2"><span>1</span></div>
+                                    <div class="p-2">
+                                    
+                                        <p>{{topHeadlines.0.title}}</p>
+                                      
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="{{topHeadlines.1.link}}">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2"><span>2</span></div>
+                                    <div class="p-2">
+                                        <p>{{topHeadlines.1.title}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{topHeadlines.2.link}}">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2"><span>3</span></div>
+                                    <div class="p-2">
+                                        <p>{{topHeadlines.2.title}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{topHeadlines.3.link}}">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2"><span>4</span></div>
+                                    <div class="p-2">
+                                        <p>{{topHeadlines.3.title}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{topHeadlines.4.link}}">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2"><span>5</span></div>
+                                    <div class="p-2">
+                                        <p>{{topHeadlines.4.title}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{topHeadlines.5.link}}">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2"><span>6</span></div>
+                                    <div class="p-2">
+                                        <p>{{topHeadlines.5.title}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{topHeadlines.6.link}}">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2"><span>7</span></div>
+                                    <div class="p-2">
+                                        <p>{{topHeadlines.6.title}}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% comment %} <div class="col-sm-2">
+                        <div class="categoryTitleA">
+                            <a href="#">
+                                <h4>মতামত <span class="CT-Icon"><i class="fa fa-caret-right"
+                                            aria-hidden="true"></i></span></h4>
+                            </a>
+                        </div>
+                        <div class="opinion Border">
+                            <a href="#">
+                                <div class="opinionDiv Border-bottom">
+                                    <img src="/static/img/benjir.jpg" alt="" title="" class="img-fluid img100 imgRound">
+                                    <span>ড. বেনজীর আহমেদ</span>
+                                    <h4 class="Mb-10">
+                                        সংশপ্তকের জন্য জন্মদিনের শ্রদ্ধাঞ্জলি
+                                    </h4>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="opinionDiv Mt-10">
+                                    <img src="/static/img/shariful_hasan_0.jpg" alt="" title=""
+                                        class="img-fluid img100 imgRound">
+                                    <span>শরিফুল হাসান</span>
+                                    <h4>
+                                        বাংলাদেশের পর্যটন: সম্ভাবনা বিপুল, প্রস্তুতি সামান্য
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div> {% endcomment %}
+                    <div class="col-sm-3">
+                        <div class="leadNewsB Mt-24">
+                            <a href="{{politicalnews.4.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{politicalnews.4.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{politicalnews.4.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="leadNewsB Mt-24">
+                            <a href="{{politicalnews.5.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{politicalnews.5.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{politicalnews.5.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="leadNewsB Mt-24">
+                            <a href="{{politicalnews.6.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{politicalnews.6.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{politicalnews.6.title}}
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" id="Lokpriya">
+                        <div class="leadNewsB Mt-24">
+                            <a href="{{politicalnews.3.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{politicalnews.3.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{politicalnews.3.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--Lokpriya Section-->
+                    <div class="col-12 " >
+                        <div class="categoryTitleB Mt-24" >
+                            <a href="#">
+                                <h4>लोकप्रिय <span class="CT-Icon"><i class="fa fa-caret-right"
+                                            aria-hidden="true"></i></span></h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="leadNewsC Mt-24">
+                            <a href="{{items.0.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{items.0.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{items.0.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="leadNewsC Mt-24">
+                            <a href="{{items.1.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{items.1.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{items.1.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="leadNewsC Mt-24">
+                            <a href="{{items.2.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{items.2.image_url}}"
+                                                alt="" title="" class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{items.2.title}}                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="leadNewsC Mt-24">
+                            <a href="{{items.3.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{items.3.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{items.3.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="leadNewsC Mt-24">
+                            <a href="{{items.4.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{items.4.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{items.4.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="leadNewsC Mt-24">
+                            <a href="{{items.5.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{items.5.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv Border">
+                                    <h3 class="title">{{items.5.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        {% comment %} <section class="categoryNewsType1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="categoryTitle">
+                                    <a href="#">
+                                        <h4>राष्ट्रिय <span class="CT-Icon"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i></span></h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="categoryNewsSec">
+                                    <a href="#">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="/static/img/e-2110031025.jpg" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">শিশুরা শেখ রাসেলের আদর্শ থেকে অনুপ্রাণিত হয়ে দেশকে
+                                                নেতৃত্ব দিতে পারবে: আইসিটি প্রতিমন্ত্রী</h3>
+                                            <p class="brief">তথ্য ও যোগাযোগ প্রযুক্তি (আইসিটি) প্রতিমন্ত্রী জুনাইদ আহমেদ
+                                                পলক বলেছেন, সর্বকালের সর্বশ্রেষ্ঠ বাঙালি জাতির পিতা বঙ্গবন্ধু শেখ
+                                                মুজিবুর রহমানের কনিষ্ঠ পুত্র শেখ রাসেল ছিলেন মায়ের অত্যন্ত আদরের
+                                                সন্তান। তিনি সবার স্নেহে ধন্য ছিলেন। শেখ রাসেল ছিলেন শিশুদের বন্ধু ও
+                                                গরিব-দুঃখী মানুষের সাহায্যকারী। আর্তমানবতার সেবাই ছিল তার জীবনের ব্রত ও
+                                                উদ্দেশ্য। আজকের শিশুরা শেখ রাসেলের জীবনাদর্শ থেকে অনুপ্রাণিত হয়ে
+                                                আগামীতে উন্নত বাংলাদেশকে পরিচালিত করতে ও নেতৃত্ব দিতে পারবে</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="listnewsImg">
+                                    <a href="#">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="/static/img/Hasan_mahmud-2110030838.jpg" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">সরকার দেশের স্বার্থ এবং আইন বাস্তবায়ন করতে
+                                                        বদ্ধপরিকর:
+                                                        তথ্যমন্ত্রী</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="#">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="/static/img/resize-2110030929.jpg" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">দেশের খাদ্য পরিস্থিতি সন্তোষজনক পর্যায়ে রয়েছে:
+                                                        খাদ্যমন্ত্রী</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="#">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="/static/img/K-2110021519.jpg" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">দাবি আদায়ে গান্ধীর শান্তিপূর্ণ আন্দোলন সারাবিশ্বে
+                                                        সমাদৃত: আইনমন্ত্রী</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="listnewsImg">
+                                    <a href="#">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="/static/img/6-1910070426-2110030403.jpg" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">মধ্যরাত থেকে ইলিশ ধরায় ২২ দিনের নিষেধাজ্ঞা</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="#">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="/static/img/image-2110021314.jpg" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">ডিসেম্বরেই দেশের ২০ শতাংশ মানুষ টিকা পাবেন:
+                                                        স্বাস্থ্যমন্ত্রী</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="#">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="/static/img/untitled-1-1629126575007-2110021322.jpg"
+                                                                alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">ডেঙ্গুতে আক্রান্ত আরো ১৮৮ জন হাসপাতালে</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> {% endcomment %}
+        <!--upatiyaka section-->
+        <section class="categoryNewsType1" id="upatiyaka">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="categoryTitle">
+                                    <a href="#">
+                                        <h4>उपत्यका<span class="CT-Icon"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i></span></h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="listnewsImg">
+                                    <a href="{{Upatiyaka.0.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{Upatiyaka.0.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{Upatiyaka.0.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="{{Upatiyaka.1.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{Upatiyaka.1.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{Upatiyaka.1.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="{{Upatiyaka.2.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{Upatiyaka.2.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{Upatiyaka.2.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="categoryNewsSec">
+                                    <a href="{{Upatiyaka.3.link}}">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="{{Upatiyaka.3.image_url}}" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">{{Upatiyaka.3.title}}</h3>
+                                            <p class="brief">{{Upatiyaka.3.description}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="listnewsImg">
+                                    <a href="{{Upatiyaka.4.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{Upatiyaka.4.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{Upatiyaka.4.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="{{Upatiyaka.5.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{Upatiyaka.5.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{Upatiyaka.5.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="{{Upatiyaka.6.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{Upatiyaka.6.image_url}}"
+                                                                alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{Upatiyaka.6.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Monoranjan section-->
+        <section class="categoryNewsType2" id="Monoranjan">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="categoryTitleA">
+                            <a href="#">
+                                <h4>मनोरञ्जन <span class="CT-Icon"><i class="fa fa-caret-right"
+                                            aria-hidden="true"></i></span></h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="newsLead">
+                            <a href="{{Monoranjan.0.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{Monoranjan.0.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{Monoranjan.0.title}}</h3>
+                                    <p class="brief">{{Monoranjan.0.description}} </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="newsLead2">
+                            <a href="{{Monoranjan.1.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{Monoranjan.1.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{Monoranjan.1.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="newsLead2">
+                            <a href="{{Monoranjan.2.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{Monoranjan.2.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{Monoranjan.2.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="newsLead2">
+                            <a href="{{Monoranjan.3.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{Monoranjan.3.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{Monoranjan.3.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="newsLead2">
+                            <a href="{{Monoranjan.4.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{Monoranjan.4.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{Monoranjan.4.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--khelkud section-->
+        <section class="categoryNewsType2" id="khelkud">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="categoryTitleB">
+                            <a href="#">
+                                <h4>खेलकुद<span class="CT-Icon"><i class="fa fa-caret-right"
+                                            aria-hidden="true"></i></span></h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="newsLead2">
+                            <a href="{{sportnews.0.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{sportnews.0.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{sportnews.0.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="newsLead2">
+                            <a href="{{sportnews.1.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{sportnews.1.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{sportnews.1.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="newsLead">
+                            <a href="{{sportnews.2.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{sportnews.2.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{sportnews.2.title}}</h3>
+                                    <p class="brief">{{sportnews.2.description}} </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="newsLead2">
+                            <a href="{{sportnews.3.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{sportnews.3.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{sportnews.3.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="newsLead2">
+                            <a href="{{sportnews.4.link}}">
+                                <div class="Imgresize">
+                                    <figure class="ImgViewer">
+                                        <picture class="FixingRatio">
+                                            <img src="{{sportnews.4.image_url}}" alt="" title=""
+                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                        </picture>
+                                    </figure>
+                                </div>
+                                <div class="newsDiv">
+                                    <h3 class="title">{{sportnews.4.title}}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Bishwa news Section-->
+        <section class="categoryNewsType6" id="Bishwa">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="categoryTitleA">
+                                    <a href="#">
+                                        <h4>विश्व<span class="CT-Icon"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i></span></h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="categoryNewsSec">
+                                    <a href="{{worldnews.0.link}}">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="{{worldnews.0.image_url}}" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">{{worldnews.0.title}}</h3>
+                                            <p class="brief"> {{worldnews.0.description}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="listnewsImg">
+                                    <a href="{{worldnews.1.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{worldnews.1.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{worldnews.1.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="{{worldnews.2.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{worldnews.2.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{worldnews.2.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="listnewsImg">
+                                    <a href="{{worldnews.3.link}}">
+                                        <div class="row gx-0">
+                                            <div class="col-6">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{worldnews.3.image_url}}"
+                                                                alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{worldnews.3.title}}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item listNews pt-0"><a href="{{worldnews.4.link}}">{{worldnews.4.title}}</a></li>
+                                    <li class="list-group-item listNews"><a href="{{worldnews.5.link}}">{{worldnews.5.title}}</a></li>
+                                    <li class="list-group-item listNews"><a href="{{worldnews.6.link}}">{{worldnews.6.title}}</a></li>
+                                    <li class="list-group-item listNews"><a href="{{worldnews.7.link}}">{{worldnews.7.title}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+         
+                </div>
+            </div>
+        </section>
+        <!--bichar and Bigyan section--> 
+        <section class="categoryNewsType4" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4" id="bichar">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="categoryTitle">
+                                    <a href="#">
+                                        <h4>विचार <span class="CT-Icon"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i></span></h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="categoryNewsSec">
+                                    <a href="{{Bichar.0.link}}">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="{{Bichar.0.image_url}}" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">{{Bichar.0.title}}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="categoryNewsSec">
+                                    <a href="{{Bichar.1.link}}">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="{{Bichar.1.image_url}}" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">{{Bichar.1.title}}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="categoryNewsSec">
+                                    <a href="{{Bichar.2.link}}">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="{{Bichar.2.image_url}}" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">{{Bichar.2.title}}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="categoryNewsSec">
+                                    <a href="{{Bichar.3.link}}">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="{{Bichar.3.image_url}}" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">{{Bichar.3.title}}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8" id="bigyanprabidhi">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="categoryTitle">
+                                    <a href="#">
+                                        <h4>विज्ञान र प्रविधि<span class="CT-Icon"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i></span></h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="categoryNewsSecLifeStyle">
+                                    <a href="{{bigyanprabidhi.0.link}}">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="{{bigyanprabidhi.0.image_url}}" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">{{bigyanprabidhi.0.title}}</h3>
+                                            <p class="brief">{{bigyanprabidhi.0.description}} </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="categoryNewsSec">
+                                            <a href="{{bigyanprabidhi.1.link}}">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{bigyanprabidhi.1.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{bigyanprabidhi.1.title}}</h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="categoryNewsSec">
+                                            <a href="{{bigyanprabidhi.2.link}}">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{bigyanprabidhi.2.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{bigyanprabidhi.2.title}}</h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="categoryNewsSec">
+                                            <a href="{{bigyanprabidhi.3.link}}">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{bigyanprabidhi.3.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{bigyanprabidhi.3.title}}</h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="categoryNewsSec">
+                                            <a href="{{bigyanprabidhi.4.link}}">
+                                                <div class="Imgresize">
+                                                    <figure class="ImgViewer">
+                                                        <picture class="FixingRatio">
+                                                            <img src="{{bigyanprabidhi.4.image_url}}" alt="" title=""
+                                                                class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                        </picture>
+                                                    </figure>
+                                                </div>
+                                                <div class="newsDiv">
+                                                    <h3 class="title">{{bigyanprabidhi.4.title}}</h3>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% comment %} <section class="categoryNewsType3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="categoryTitle">
+                                    <a href="#">
+                                        <h4>অর্থনীতি <span class="CT-Icon"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i></span></h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="categoryNewsSec">
+                                    <a href="#">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="/static/img/2-2109301839.jpg" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">ভরিতে যত কমলো সোনার দাম</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item listNews pt-0"><a href="#">মুহিবুল্লাহর
+                                            হত্যাকারীদের অবশ্যই বিচার করা হবে: পররাষ্ট্রমন্ত্রী</a></li>
+                                    <li class="list-group-item listNews"><a href="#">খালেদার মুক্তির মেয়াদ বাড়ানোর
+                                            বিষয়টি প্রক্রিয়াধীন: স্বরাষ্ট্রমন্ত্রী</a></li>
+                                    <li class="list-group-item listNews"><a href="#">আওয়ামী লীগ তৃণমূল থেকে গড়ে
+                                            ওঠা রাজনৈতিক দল: ওবায়দুল কাদের</a></li>
+                                    <li class="list-group-item listNews"><a href="#">বছর নয়, তিন মাসেই জিডিপির
+                                            তথ্য দেবে বিবিএস: পরিকল্পনামন্ত্রী</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="categoryTitle">
+                                    <a href="#">
+                                        <h4>আইন ও আদালত <span class="CT-Icon"><i class="fa fa-caret-right"
+                                                    aria-hidden="true"></i></span></h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="categoryNewsSec">
+                                    <a href="#">
+                                        <div class="Imgresize">
+                                            <figure class="ImgViewer">
+                                                <picture class="FixingRatio">
+                                                    <img src="/static/img/ade-2110021441.jpg" alt="" title=""
+                                                        class="img-fluid img100 Ratio Ratio16x9 ImgRatio">
+                                                </picture>
+                                            </figure>
+                                        </div>
+                                        <div class="newsDiv">
+                                            <h3 class="title">‘শ্রোতাদের মনযোগ আকর্ষণে মনগড়া কথাবার্তা প্রচার করেন মুফতি
+                                                ইব্রাহিম’</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item listNews pt-0"><a href="#">‘সুখী সমৃদ্ধ দেশ গড়তে
+                                            উৎপাদনশীলতার ওপর গুরুত্বারোপ করতে হবে’</a></li>
+                                    <li class="list-group-item listNews"><a href="#">খালেদার মুক্তির মেয়াদ বাড়ানোর
+                                            বিষয়টি প্রক্রিয়াধীন: স্বরাষ্ট্রমন্ত্রী</a></li>
+                                    <li class="list-group-item listNews"><a href="#">আওয়ামী লীগ তৃণমূল থেকে গড়ে
+                                            ওঠা রাজনৈতিক দল: ওবায়দুল কাদের</a></li>
+                                    <li class="list-group-item listNews"><a href="#">বছর নয়, তিন মাসেই জিডিপির
+                                            তথ্য দেবে বিবিএস: পরিকল্পনামন্ত্রী</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> {% endcomment %}
+       
+        
+    </main>
+    <footer class="footerSection">
+        <div class="container">
+            <div class="footerbody">
+                <div class="row">
+                    <div class="col-sm-3 offset-sm-3 Border-right"><a href="#">
+                            <img src="/static/img/logo.png" alt="Daily Bangladesh" class="img-fluid img100 img-size">
+                        </a>
+                        {% comment %} <div class="footerSocialIcon text-end">
+                            <span><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></span>
+                            <span><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
+                            <span><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></span>
+                        </div> {% endcomment %}
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="address">
+                            कार्यवाहक सम्पादकः देव नारायण ताजपुरिया <br>
+                            काठमाडौं, जडीबुटी <br>
+                            फोन नम्बर: ९८१५९२८६७९ <br>
+                            इमेल: techdevinfo12@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="footerber">
+                <div class="row">
+                    <div class="col-12">
+                        <p>©2023 | सबै अधिकार सुरक्षित ® देव द्वारा</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function redirectToDiv(event) {
+          event.preventDefault();
+          var target = event.target.getAttribute("href");
+          var element = document.querySelector(target);
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 81) {
+                $('.headerSticky').addClass('fixed');
+            } else {
+                $('.headerSticky').removeClass('fixed');
+            }
+        });
+
+        $()
+         
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
